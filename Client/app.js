@@ -46,7 +46,7 @@ socket.on("updatePlayers", (players) => {
 
     players.forEach((player) => {
         const li = document.createElement("li");
-        li.innerText = player;
+        li.innerText = player.name;
         playerList.appendChild(li);
     });
 });
