@@ -6,11 +6,23 @@
     <title>Chaos Nights</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>🎮 Chaos Nights</h1>
+        <div class="hero">
+    <img src="logo.png" class="logo" alt="Marviinioo">
+
+    <h1 class="brand">
+        MARVIINIOO
+    </h1>
+
+    <h2 class="subtitle">
+        CHAOS NIGHTS
+    </h2>
+</div>
 
         <input id="playerName" type="text" placeholder="Dein Name">
 
@@ -32,11 +44,22 @@
     </div>
 
     <div class="social">
-    <a href="https://twitch.tv/Marviinioo" target="_blank">📺 Twitch</a>
-    <a href="https://www.tiktok.com/@marvinio4747" target="_blank">🎵 TikTok</a>
-    <a href="https://instagram.com/marvin_hh47" target="_blank">📷 Instagram</a>
-    <a href="https://youtube.com/@marvinio1062" target="_blank">▶️ YouTube</a>
-</div>
+        <a class="twitch" href="https://twitch.tv/Marviinioo" target="_blank">
+            <i class="fab fa-twitch"></i>
+        </a>
+
+        <a class="tiktok" href="https://www.tiktok.com/@marvinio4747" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a class="instagram" href="https://instagram.com/marvin_hh47" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a class="youtube" href="https://youtube.com/@marvinio1062" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="app.js"></script>
