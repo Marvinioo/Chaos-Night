@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Nights</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎮 Chaos Nights</h1>
+
+        <input id="playerName" type="text" placeholder="Dein Name">
+
+        <div class="buttons">
+            <button id="createLobby">Lobby erstellen</button>
+            <button id="joinLobby">Lobby beitreten</button>
+        </div>
+
+        <div id="lobby" class="hidden">
+            <h2>Lobby</h2>
+
+            <p>Lobby-Code:</p>
+            <h3 id="roomCode">----</h3>
+
+            <ul id="playerList"></ul>
+
+            <button id="startGame">Spiel starten</button>
+        </div>
+    </div>
+
+    <div class="social">
+        <a href="https://twitch.tv/Marviniioo" target="_blank">
+            📺 Twitch
+        </a>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
