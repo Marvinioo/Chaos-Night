@@ -9,7 +9,7 @@ const io = new Server(server);
 
 const lobbies = {};
 
-app.use(express.static(path.join(__dirname, "../client")));
+app.use(express.static(path.join(__dirname, "../Client")));
 
 function createCode() {
     return Math.random().toString(36).substring(2, 6).toUpperCase();
@@ -72,6 +72,8 @@ io.on("connection", (socket) => {
     });
 });
 
-server.listen(3000, () => {
-    console.log("Server läuft auf http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+    console.log(`Server läuft auf Port ${PORT}`);
 });
