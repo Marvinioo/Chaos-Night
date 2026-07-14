@@ -21,8 +21,12 @@ io.on("connection", (socket) => {
         const code = createCode();
 
         lobbies[code] = {
-            players: [{ id: socket.id, name }]
-        };
+    host: socket.id,
+    players: [{
+        id: socket.id,
+        name: name
+    }]
+};
 
         socket.join(code);
 
@@ -30,7 +34,11 @@ io.on("connection", (socket) => {
 
         io.to(code).emit(
             "updatePlayers",
-            lobbies[code].players.map(p => p.name)
+            lobbies[code].players.map(player => ({
+    id: player.id,
+    name: player.name,
+    host: player.id === lobbies[code].host
+}))
         );
     });
 
@@ -47,10 +55,37 @@ io.on("connection", (socket) => {
 
         io.to(code).emit(
             "updatePlayers",
-            lobbies[code].players.map(p => p.name)
+            lobbies[code].players.map(player => ({
+    id: player.id,
+    name: player.name,
+    host: player.id === lobbies[code].host
+}))
         );
     });
+socket.on("kickPlayer", ({ code, playerId }) => {
 
+    if (!lobbies[code]) return;
+
+    if (lobbies[code].host !== socket.id) return;
+
+    io.to(playerId).emit("kicked");
+
+    io.sockets.sockets.get(playerId)?.leave(code);
+
+    lobbies[code].players =
+        lobbies[code].players.filter(
+            player => player.id !== playerId
+        );
+
+    io.to(code).emit(
+        "updatePlayers",
+        lobbies[code].players.map(player => ({
+            id: player.id,
+            name: player.name,
+            host: player.id === lobbies[code].host
+        }))
+    );
+});
     socket.on("disconnect", () => {
 
         for (const code in lobbies) {
@@ -62,7 +97,11 @@ io.on("connection", (socket) => {
 
             io.to(code).emit(
                 "updatePlayers",
-                lobbies[code].players.map(p => p.name)
+                lobbies[code].players.map(player => ({
+    id: player.id,
+    name: player.name,
+    host: player.id === lobbies[code].host
+}))
             );
 
             if (lobbies[code].players.length === 0) {
