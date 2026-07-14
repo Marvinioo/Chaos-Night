@@ -1,96 +1,121 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* ==== CHAOS NIGHTS - Gaming Theme ==== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-body {
-    background: linear-gradient(135deg, #1e1e2f, #0d0d15);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+body{
+background:
+radial-gradient(circle at top,#5b0000 0%,#1a0000 30%,#090909 70%,#000 100%);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
+overflow-x:hidden;
 }
 
-.container {
-    background: rgba(255,255,255,0.08);
-    padding: 30px;
-    border-radius: 15px;
-    width: 420px;
-    text-align: center;
-    backdrop-filter: blur(10px);
+.container{
+width:460px;
+background:rgba(20,20,20,.72);
+backdrop-filter:blur(14px);
+border:2px solid rgba(255,0,0,.35);
+border-radius:24px;
+padding:35px;
+box-shadow:0 0 35px rgba(255,0,0,.35);
+text-align:center;
 }
 
-h1 {
-    margin-bottom: 25px;
+.hero{text-align:center;margin-bottom:25px;}
+.logo{width:180px;display:block;margin:0 auto 15px;}
+.brand{
+font-size:42px;
+font-weight:900;
+letter-spacing:4px;
+color:#ff3b3b;
+text-shadow:0 0 10px #f00,0 0 25px #f00,0 0 40px #f00;
+}
+.subtitle{
+margin-top:8px;
+letter-spacing:6px;
+font-size:18px;
+color:#ddd;
 }
 
-input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
+input{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+margin:12px 0;
+background:#1d1d1d;
+color:#fff;
+font-size:16px;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 8px;
-    background: #6c5ce7;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.2s;
+button{
+width:100%;
+margin-top:12px;
+padding:15px;
+border:none;
+border-radius:14px;
+background:linear-gradient(90deg,#ff2020,#b40000);
+color:#fff;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+transition:.25s;
+box-shadow:0 0 18px rgba(255,0,0,.45);
 }
 
-button:hover {
-    background: #5a4bd6;
+button:hover{
+transform:translateY(-2px) scale(1.02);
+box-shadow:0 0 28px rgba(255,0,0,.8);
 }
 
-.hidden {
-    display: none;
+.hidden{display:none;}
+
+#roomCode{
+margin:15px 0;
+font-size:32px;
+letter-spacing:5px;
+color:#ff5757;
 }
 
-#roomCode {
-    margin: 15px 0;
-    font-size: 30px;
-    letter-spacing: 4px;
+#playerList{
+list-style:none;
+margin:20px 0;
 }
 
-#playerList {
-    list-style: none;
-    margin: 20px 0;
+#playerList li{
+background:#222;
+padding:10px;
+margin:8px 0;
+border-radius:10px;
+border-left:4px solid #ff2b2b;
 }
 
-#playerList li {
-    padding: 8px;
-    background: rgba(255,255,255,0.08);
-    margin: 5px 0;
-    border-radius: 6px;
+.social{
+position:fixed;
+top:22px;
+right:22px;
+display:flex;
+gap:18px;
 }
 
-.social {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+.social a{
+font-size:34px;
+transition:.25s;
+text-decoration:none;
 }
 
-.social a {
-    color: white;
-    text-decoration: none;
-    background: #9146FF;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: bold;
+.social a:hover{
+transform:scale(1.25) rotate(5deg);
 }
 
-.social a:hover {
-    opacity: 0.9;
-}
+.twitch{color:#9146FF;}
+.tiktok{color:#fff;}
+.instagram{color:#E1306C;}
+.youtube{color:#FF0000;}
